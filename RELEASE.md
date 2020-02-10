@@ -1,12 +1,17 @@
 ### CY8CPROTO-063-BLE BSP
 The PSoC 6 BLE Prototyping Kit (CY8CPROTO-063-BLE) is a low-cost hardware platform that enables design and debug of PSoC 6 MCUs. This kit is designed with a snap-away form-factor, allowing users to separate the KitProg (on-board programmer and debugger) from the target board and use independently.
 
+### What's New In This Release?
+* This release adds updated linker scripts and startup code for the CM0+ and CM4 cores. The files are now in core specific directories.
+* Minor updates up avoid potential warnings on some toolchains
+
 ### What's Included?
 The CY8CPROTO-063-BLE library includes the following:
 * BSP specific makefile to configure the build process for the board
 * cybsp.c/h files to initialize the board and any system peripherals
 * cybsp_types.h file describing basic board setup
-* Linker script & startup code for GCC, IAR, ARM toolchains
+* CM4 Linker script & startup code for GCC, IAR, ARM toolchains
+* CM0+ Linker script & startup code for GCC, IAR, ARM toolchains
 * Configurator design files (and generated code) to setup board specific peripherals
 * .lib file references for all dependent libraries
 * API documentation

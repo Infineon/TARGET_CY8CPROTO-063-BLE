@@ -1,6 +1,6 @@
 ################################################################################
 # \file cy8c6xx7_cm4_dual.mk
-# \version 2.60
+# \version 2.70
 #
 # \brief
 # Specifies the starting address and the size of the segments in the output
@@ -77,9 +77,13 @@ SECTIONS_CM4 := \
 
 # Pass section addresses to the linker
 ifeq ($(CORE),CM4)
-LDFLAGS += $(SECTIONS_CM4)
+LDFLAGS += \
+    -segalign 4 \
+    $(SECTIONS_CM4)
 else ifeq ($(CORE),CM0P)
-LDFLAGS += $(SECTIONS_CM0P)
+LDFLAGS += \
+    -segalign 4 \
+    $(SECTIONS_CM0P)
 endif
 
 # EOF

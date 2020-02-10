@@ -1,6 +1,6 @@
 /***************************************************************************//**
 * \file cy8c6xx7_cm4_dual.ld
-* \version 2.60
+* \version 2.70
 *
 * Linker file for the GNU C compiler.
 *
@@ -40,10 +40,10 @@ SEARCH_DIR(.)
 GROUP(-lgcc -lc -lnosys)
 ENTRY(Reset_Handler)
 
-/* Size of the stack section at the end of CM4 SRAM */
+/* The size of the stack section at the end of CM4 SRAM */
 STACK_SIZE = 0x1000;
 
-/* Size of the Cortex-M0+ application image at the start of FLASH */
+/* The size of the Cortex-M0+ application image at the start of FLASH */
 FLASH_CM0P_SIZE  = 0x2000;
 
 /* Force symbol to be entered in the output file as an undefined symbol. Doing

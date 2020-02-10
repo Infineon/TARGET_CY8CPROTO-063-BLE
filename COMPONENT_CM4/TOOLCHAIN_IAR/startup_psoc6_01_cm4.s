@@ -50,6 +50,7 @@
         EXTERN  SystemInit
         EXTERN  Cy_SystemInitFpuEnable
         EXTERN __iar_data_init3
+        EXTERN __iar_dynamic_initialization
         PUBLIC  __vector_table
         PUBLIC  __vector_table_0x1c
         PUBLIC  __Vectors
@@ -319,13 +320,16 @@ intvec_copy
         STR r0, [r1]
         dsb
 
-        ; OS-specific low-level initialization
-        LDR     R0, =cy_toolchain_init
-        BLX     R0
-
         ; Initialize data sections
         LDR     R0, =__iar_data_init3
         BLX     R0
+        
+        ; OS-specific low-level initialization
+        LDR     R0, =cy_toolchain_init
+        BLX     R0
+        
+        ; --manual_dynamic_initialization
+        BL      __iar_dynamic_initialization
 
         LDR     R0, =SystemInit
         BLX     R0

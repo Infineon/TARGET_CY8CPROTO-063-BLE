@@ -40,7 +40,8 @@
 #endif
     .globl    __StackTop
     .globl    __StackLimit
-    __StackLimit:
+
+__StackLimit:
     .space    Stack_Size
     .equ    __StackTop, . - Stack_Size
 
@@ -54,7 +55,7 @@
     .globl    __HeapBase
 __HeapBase:
     .if    Heap_Size
-        .space    Heap_Size
+    .space    Heap_Size
     .endif
 
     .section __VECT, ___Vectors
@@ -62,7 +63,7 @@ __HeapBase:
     .globl    ___Vectors
 ___Vectors:
     .long    __StackTop            /* Top of Stack */
-    .long    Reset_Handler+1       /* Reset Handler. Added +1, clang doesn't make lsb to 1 for thumb */
+    .long    Reset_Handler         /* Reset Handler */
     .long    CY_NMI_HANLDER_ADDR   /* NMI Handler */
     .long    HardFault_Handler     /* Hard Fault Handler */
     .long    MemManage_Handler     /* MPU Fault Handler */
@@ -232,14 +233,14 @@ ___Vectors:
     .section __RAMVECTORS, ___ramVectors
     .align 2
     .globl ___ramVectors
+
 ___ramVectors:
     .space  __VectorsSize
 
 
-    /* Only .text, otherwise the linker is smart enough to treat .thumb_func as 2 byte aligned and the
-    * Reset handler vector + 1 in the vector table ends up at +2 and boot fails. Clang/LLVM issue.
-    */
     .text
+    .thumb_func
+    .align 2
     /* Reset handler */
     .globl Reset_Handler
 
@@ -256,55 +257,22 @@ Reset_Handler:
  *
  *  All addresses must be aligned to 4 bytes boundary.
  */
-    .equ    __copy_table_start__, ___Vectors
-    .equ    __data_start__, ___ramVectors
-    .equ    __data_end__, __data_start__ + __VectorsSize
-    ldr    r1, =__copy_table_start__
-    ldr    r2, =__data_start__
-    ldr    r3, =__data_end__
-.L_loop_copy_table:
-    subs   r4, r3, r2
-    ble    .L_loop_copy_table_done
-    ldr    r0, [r1,r4]
-    str    r0, [r2,r4]
-    subs   r3, #4
-    bgt    .L_loop_copy_table
-.L_loop_copy_table_done:
+    ldr    r0, =___ramVectors
+    ldr    r1, =___Vectors
+    ldr    r2, =__VectorsSize
+    bl     _memcpy
+
+    ldr    r0, =segment$start$__DATA
     ldr    r1, =segment$end$__TEXT
-    ldr    r2, =section$start$__DATA$__data
-    ldr    r3, =section$end$__DATA$__data
-    mov    r4, #3
-    adds   r1, #3
-    mvn    r4, r4
-    and    r1, r4
-.L_loop_copy_data:
-    subs   r4, r3, r2
-    ble    .L_loop_copy_data_done
-    ldr    r0, [r1,r4]
-    str    r0, [r2,r4]
-    subs   r3, #4
-    bgt    .L_loop_copy_data
-.L_loop_copy_data_done:
-    ldr    r2, =section$start$__DATA$__bss
-    ldr    r3, =section$end$__DATA$__bss
-.L_loop_bss:
-    subs   r1, r3, r2
-    ble    .L_loop_bss_done
-    movs   r0, #0
-    str    r0, [r2,r1]
-    subs   r3, #4
-    bgt    .L_loop_bss
-.L_loop_bss_done:
     ldr    r2, =section$start$__DATA$__zerofill
-    ldr    r3, =section$end$__DATA$__zerofill
-.L_loop_zerofill:
-    subs   r1, r3, r2
-    ble    .L_loop_zerofill_done
-    movs   r0, #0
-    str    r0, [r2,r1]
-    subs   r3, #4
-    bgt    .L_loop_zerofill
-.L_loop_zerofill_done:
+    sub    r2, r0
+    bl     _memcpy
+
+    ldr    r0, =section$start$__DATA$__zerofill
+    eor    r1, r1
+    ldr    r2, =section$end$__DATA$__zerofill
+    sub    r2, r0
+    bl     _memset
 
     /* Update Vector Table Offset Register. */
     ldr r0, =___ramVectors
@@ -330,11 +298,11 @@ Reset_Handler:
     .text
     .thumb
     .thumb_func
-    .align  2
+    .align 2
 
     /* Device startup customization */
     .weak_definition   Cy_OnResetUser
-    .global   Cy_OnResetUser, Cy_OnResetUser
+    .global Cy_OnResetUser, Cy_OnResetUser
 Cy_OnResetUser:
     bx lr
 
