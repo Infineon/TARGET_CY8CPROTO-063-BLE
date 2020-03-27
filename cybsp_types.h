@@ -7,7 +7,7 @@
 *
 ********************************************************************************
 * \copyright
-* Copyright 2018-2019 Cypress Semiconductor Corporation
+* Copyright 2018-2020 Cypress Semiconductor Corporation
 * SPDX-License-Identifier: Apache-2.0
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -27,6 +27,9 @@
 
 #if defined(CY_USING_HAL)
 #include "cyhal_pin_package.h"
+#endif
+#if defined(COMPONENT_BSP_DESIGN_MODUS) || defined(COMPONENT_CUSTOM_DESIGN_MODUS)
+#include "cycfg.h"
 #endif
 
 #if defined(__cplusplus)
@@ -66,14 +69,22 @@ extern "C" {
 */
 
 /** Pin state for the LED on. */
+#ifndef CYBSP_LED_STATE_ON
 #define CYBSP_LED_STATE_ON          (0U)
+#endif
 /** Pin state for the LED off. */
+#ifndef CYBSP_LED_STATE_OFF
 #define CYBSP_LED_STATE_OFF         (1U)
+#endif
 
 /** Pin state for when a button is pressed. */
+#ifndef CYBSP_BTN_PRESSED
 #define CYBSP_BTN_PRESSED           (0U)
+#endif
 /** Pin state for when a button is released. */
+#ifndef CYBSP_BTN_OFF
 #define CYBSP_BTN_OFF               (1U)
+#endif
 
 /** \} group_bsp_pin_state */
 
@@ -90,16 +101,26 @@ extern "C" {
 */
 
 /** LED 3; User LED1 (red) */
+#ifndef CYBSP_LED3
 #define CYBSP_LED3                  (P6_3)
+#endif
 /** LED 4; User LED2 (green) */
+#ifndef CYBSP_LED4
 #define CYBSP_LED4                  (P7_1)
+#endif
 
 /** LED 3; User LED1 (red) */
+#ifndef CYBSP_USER_LED1
 #define CYBSP_USER_LED1             (CYBSP_LED3)
+#endif
 /** LED 4; User LED2 (green) */
+#ifndef CYBSP_USER_LED2
 #define CYBSP_USER_LED2             (CYBSP_LED4)
+#endif
 /** LED 3; User LED1 (red) */
+#ifndef CYBSP_USER_LED
 #define CYBSP_USER_LED              (CYBSP_USER_LED1)
+#endif
 
 /** \} group_bsp_pins_led */
 
@@ -109,12 +130,18 @@ extern "C" {
 */
 
 /** Switch 2; User Button 1 */
+#ifndef CYBSP_SW2
 #define CYBSP_SW2                   (P0_4)
+#endif
 
 /** Switch 2; User Button 1 */
+#ifndef CYBSP_USER_BTN1
 #define CYBSP_USER_BTN1             (CYBSP_SW2)
+#endif
 /** Switch 2; User Button 1 */
+#ifndef CYBSP_USER_BTN
 #define CYBSP_USER_BTN              (CYBSP_USER_BTN1)
+#endif
 
 /** \} group_bsp_pins_btn */
 
