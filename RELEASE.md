@@ -15,6 +15,9 @@ The CY8CPROTO-063-BLE library includes the following:
 * API documentation
 
 ### What Changed?
+#### v1.2.1
+* Add 43012/4343W/43438 component to appropriate BSPs
+* Added multi-image policy for secure (064) BSPs
 #### v1.2.0
 * Standardize version numbering for all boards in a family
 * Moved UDB SDIO implementation into its own library udb-sdio-whd library

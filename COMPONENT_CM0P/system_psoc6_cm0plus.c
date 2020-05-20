@@ -40,6 +40,10 @@
     #endif /* defined(CY_DEVICE_PSOC6ABLE2) */
 #endif /* !defined(CY_IPC_DEFAULT_CFG_DISABLE) */
 
+#if defined(CY_DEVICE_SECURE)
+    #include "cy_pra.h"
+#endif /* defined(CY_DEVICE_SECURE) */
+
 
 /*******************************************************************************
 * SystemCoreClockUpdate()
@@ -219,6 +223,11 @@ void SystemInit(void)
 #endif /* defined(CY_DEVICE_PSOC6ABLE2) */
 
 #endif /* !defined(CY_IPC_DEFAULT_CFG_DISABLE) */
+
+    #if defined(CY_DEVICE_SECURE)
+        /* Initialize Protected Regsiter Access driver. */
+        Cy_PRA_Init();
+    #endif /* defined(CY_DEVICE_SECURE) */
 }
 
 
@@ -263,7 +272,7 @@ void SystemCoreClockUpdate (void)
         cy_Hfclk0FreqHz = locHf0Clock;
         cy_PeriClkFreqHz = locHf0Clock / (1UL + (uint32_t)Cy_SysClk_ClkPeriGetDivider());
         SystemCoreClock = cy_PeriClkFreqHz / (1UL + (uint32_t)Cy_SysClk_ClkSlowGetDivider());
-        
+
         /* Sets clock frequency for Delay API */
         cy_delayFreqMhz = (uint8_t)CY_SYSLIB_DIV_ROUNDUP(SystemCoreClock, CY_DELAY_1M_THRESHOLD);
         cy_delayFreqKhz = CY_SYSLIB_DIV_ROUNDUP(SystemCoreClock, CY_DELAY_1K_THRESHOLD);
