@@ -4,8 +4,8 @@
 * Description:
 * Pin configuration
 * This file was automatically generated and should not be modified.
-* Device Configurator: 2.0.0.1483
-* Device Support Library (libs/psoc6pdl): 1.4.1.2240
+* cfg-backend-cli: 1.2.0.1483
+* Device Support Library (libs/psoc6pdl): 1.6.0.4266
 *
 ********************************************************************************
 * Copyright 2017-2019 Cypress Semiconductor Corporation
@@ -54,6 +54,9 @@ extern "C" {
 	#define WCO_IN_HAL_PORT_PIN P0_0
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
+	#define WCO_IN P0_0
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
 	#define WCO_IN_HAL_IRQ CYHAL_GPIO_IRQ_NONE
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
@@ -76,6 +79,9 @@ extern "C" {
 #define WCO_OUT_IRQ ioss_interrupts_gpio_0_IRQn
 #if defined (CY_USING_HAL)
 	#define WCO_OUT_HAL_PORT_PIN P0_1
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define WCO_OUT P0_1
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
 	#define WCO_OUT_HAL_IRQ CYHAL_GPIO_IRQ_NONE
@@ -102,6 +108,9 @@ extern "C" {
 	#define SWDIO_HAL_PORT_PIN P6_6
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
+	#define SWDIO P6_6
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
 	#define SWDIO_HAL_IRQ CYHAL_GPIO_IRQ_NONE
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
@@ -124,6 +133,9 @@ extern "C" {
 #define SWCLK_IRQ ioss_interrupts_gpio_6_IRQn
 #if defined (CY_USING_HAL)
 	#define SWCLK_HAL_PORT_PIN P6_7
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define SWCLK P6_7
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
 	#define SWCLK_HAL_IRQ CYHAL_GPIO_IRQ_NONE

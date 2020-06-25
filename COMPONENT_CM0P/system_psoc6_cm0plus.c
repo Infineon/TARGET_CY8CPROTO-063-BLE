@@ -1,6 +1,6 @@
 /***************************************************************************//**
 * \file system_psoc6_cm0plus.c
-* \version 2.70.1
+* \version 2.80
 *
 * The device system-source file.
 *
@@ -130,6 +130,7 @@ uint32_t cy_delay32kMs    = CY_DELAY_MS_OVERFLOW_THRESHOLD *
 * - Unlocks and disables WDT.
 * - Calls Cy_PDL_Init() function to define the driver library.
 * - Calls the Cy_SystemInit() function, if compiled from PSoC Creator.
+* - Calls \ref Cy_PRA_Init() for PSoC 64 devices.
 * - Calls \ref SystemCoreClockUpdate().
 *
 *******************************************************************************/

@@ -1,6 +1,6 @@
 /***************************************************************************//**
 * \file system_psoc6_cm4.c
-* \version 2.70.1
+* \version 2.80
 *
 * The device system-source file.
 *
@@ -39,6 +39,10 @@
         #include "cy_flash.h"
     #endif /* defined(CY_DEVICE_PSOC6ABLE2) */
 #endif /* !defined(CY_IPC_DEFAULT_CFG_DISABLE) */
+
+#if defined(CY_DEVICE_SECURE)
+    #include "cy_pra.h"
+#endif /* defined(CY_DEVICE_SECURE) */
 
 
 /*******************************************************************************
@@ -125,6 +129,7 @@ uint32_t cy_delay32kMs    = CY_DELAY_MS_OVERFLOW_THRESHOLD *
 * - Unlocks and disables WDT.
 * - Calls Cy_PDL_Init() function to define the driver library.
 * - Calls the Cy_SystemInit() function, if compiled from PSoC Creator.
+* - Calls \ref Cy_PRA_Init() for PSoC 64 devices.
 * - Calls \ref SystemCoreClockUpdate().
 * \endcond
 *******************************************************************************/
@@ -233,6 +238,11 @@ void SystemInit(void)
 #endif /* defined(CY_DEVICE_PSOC6ABLE2) */
 
 #endif /* !defined(CY_IPC_DEFAULT_CFG_DISABLE) */
+
+#if defined(CY_DEVICE_SECURE)
+    /* Initialize Protected Register Access driver */
+    Cy_PRA_Init();
+#endif /* defined(CY_DEVICE_SECURE) */
 }
 
 
