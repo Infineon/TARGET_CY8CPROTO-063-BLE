@@ -4,11 +4,13 @@
 * Description:
 * Pin configuration
 * This file was automatically generated and should not be modified.
-* cfg-backend-cli: 1.2.0.1483
-* Device Support Library (libs/psoc6pdl): 1.6.0.4266
+* Tools Package 2.2.0.2801
+* latest-v2.X 2.0.0.6211
+* personalities 3.0.0.0
+* udd 3.0.0.562
 *
 ********************************************************************************
-* Copyright 2017-2019 Cypress Semiconductor Corporation
+* Copyright 2020 Cypress Semiconductor Corporation
 * SPDX-License-Identifier: Apache-2.0
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,7 +28,7 @@
 
 #include "cycfg_pins.h"
 
-const cy_stc_gpio_pin_config_t WCO_IN_config =
+const cy_stc_gpio_pin_config_t WCO_IN_config = 
 {
 	.outVal = 1,
 	.driveMode = CY_GPIO_DM_ANALOG,
@@ -43,14 +45,14 @@ const cy_stc_gpio_pin_config_t WCO_IN_config =
 	.vohSel = 0UL,
 };
 #if defined (CY_USING_HAL)
-	const cyhal_resource_inst_t WCO_IN_obj =
+	const cyhal_resource_inst_t WCO_IN_obj = 
 	{
 		.type = CYHAL_RSC_GPIO,
 		.block_num = WCO_IN_PORT_NUM,
 		.channel_num = WCO_IN_PIN,
 	};
 #endif //defined (CY_USING_HAL)
-const cy_stc_gpio_pin_config_t WCO_OUT_config =
+const cy_stc_gpio_pin_config_t WCO_OUT_config = 
 {
 	.outVal = 1,
 	.driveMode = CY_GPIO_DM_ANALOG,
@@ -67,14 +69,14 @@ const cy_stc_gpio_pin_config_t WCO_OUT_config =
 	.vohSel = 0UL,
 };
 #if defined (CY_USING_HAL)
-	const cyhal_resource_inst_t WCO_OUT_obj =
+	const cyhal_resource_inst_t WCO_OUT_obj = 
 	{
 		.type = CYHAL_RSC_GPIO,
 		.block_num = WCO_OUT_PORT_NUM,
 		.channel_num = WCO_OUT_PIN,
 	};
 #endif //defined (CY_USING_HAL)
-const cy_stc_gpio_pin_config_t SWDIO_config =
+const cy_stc_gpio_pin_config_t SWDIO_config = 
 {
 	.outVal = 1,
 	.driveMode = CY_GPIO_DM_PULLUP,
@@ -91,14 +93,14 @@ const cy_stc_gpio_pin_config_t SWDIO_config =
 	.vohSel = 0UL,
 };
 #if defined (CY_USING_HAL)
-	const cyhal_resource_inst_t SWDIO_obj =
+	const cyhal_resource_inst_t SWDIO_obj = 
 	{
 		.type = CYHAL_RSC_GPIO,
 		.block_num = SWDIO_PORT_NUM,
 		.channel_num = SWDIO_PIN,
 	};
 #endif //defined (CY_USING_HAL)
-const cy_stc_gpio_pin_config_t SWCLK_config =
+const cy_stc_gpio_pin_config_t SWCLK_config = 
 {
 	.outVal = 1,
 	.driveMode = CY_GPIO_DM_PULLDOWN,
@@ -115,7 +117,7 @@ const cy_stc_gpio_pin_config_t SWCLK_config =
 	.vohSel = 0UL,
 };
 #if defined (CY_USING_HAL)
-	const cyhal_resource_inst_t SWCLK_obj =
+	const cyhal_resource_inst_t SWCLK_obj = 
 	{
 		.type = CYHAL_RSC_GPIO,
 		.block_num = SWCLK_PORT_NUM,

@@ -15,6 +15,15 @@ The CY8CPROTO-063-BLE library includes the following:
 * API documentation
 
 ### What Changed?
+#### v2.0.0
+* Updated design files and GeneratedSource with ModusToolbox 2.2 release
+* Migrated pin definitions into design.modus file
+* Updated clock frequencies to 144 MHz (fast) / 72 MHz (slow)
+* Updated MPNs on some boards to non-obsolete parts
+* Switched psoc6pdl dependency to new mtb-pdl
+* Switched psoc6hal dependency to new mtb-hal
+* Switched psoc6make dependency to new core-make & recipe-make-cat1a
+NOTE: This version requires ModusToolbox tools 2.2 or later. This version is not backwards compatible with 1.X versions. Additional manual steps must be taken to successfully update a design using a 1.x version of the BSP to this version.
 #### v1.3.0
 * Minor update for documentation & branding
 * Updated design files to use latest personality files
@@ -42,10 +51,12 @@ This version of the CY8CPROTO-063-BLE BSP was validated for compatibility with t
 
 | Software and Tools                        | Version |
 | :---                                      | :----:  |
-| ModusToolbox Software Environment         | 2.0     |
-| GCC Compiler                              | 7.4     |
-| IAR Compiler                              | 8.32    |
+| ModusToolbox Software Environment         | 2.2     |
+| GCC Compiler                              | 9.2     |
+| IAR Compiler                              | 8.4     |
 | ARM Compiler                              | 6.11    |
+
+Minimum required ModusToolbox Software Environment: v2.2
 
 ### More information
 * [CY8CPROTO-063-BLE BSP API Reference Manual][api]

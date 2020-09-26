@@ -4,11 +4,13 @@
 * Description:
 * Peripheral Hardware Block configuration
 * This file was automatically generated and should not be modified.
-* cfg-backend-cli: 1.2.0.1483
-* Device Support Library (libs/psoc6pdl): 1.6.0.4266
+* Tools Package 2.2.0.2801
+* latest-v2.X 2.0.0.6211
+* personalities 3.0.0.0
+* udd 3.0.0.562
 *
 ********************************************************************************
-* Copyright 2017-2019 Cypress Semiconductor Corporation
+* Copyright 2020 Cypress Semiconductor Corporation
 * SPDX-License-Identifier: Apache-2.0
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -27,7 +29,7 @@
 #include "cycfg_peripherals.h"
 
 #if defined (CY_USING_HAL)
-	const cyhal_resource_inst_t CYBSP_BLE_obj =
+	const cyhal_resource_inst_t CYBSP_BLE_obj = 
 	{
 		.type = CYHAL_RSC_BLESS,
 		.block_num = 0U,

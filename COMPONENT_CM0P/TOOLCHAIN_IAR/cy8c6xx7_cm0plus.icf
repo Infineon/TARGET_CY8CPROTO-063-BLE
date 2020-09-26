@@ -1,6 +1,6 @@
 /*******************************************************************************
 * \file cy8c6xx7_cm0plus.icf
-* \version 2.80
+* \version 2.90.1
 *
 * Linker file for the IAR compiler.
 *
@@ -41,6 +41,21 @@
 /*-Specials-*/
 define symbol __ICFEDIT_intvec_start__ = 0x00000000;
 
+/*-Sizes-*/
+if (!isdefinedsymbol(__STACK_SIZE)) {
+  define symbol __ICFEDIT_size_cstack__ = 0x1000;
+} else {
+  define symbol __ICFEDIT_size_cstack__ = __STACK_SIZE;
+}
+define symbol __ICFEDIT_size_proc_stack__ = 0x0;
+
+/* Defines the minimum heap size. The actual heap size will be expanded to the end of the stack region */
+if (!isdefinedsymbol(__HEAP_SIZE)) {
+    define symbol __ICFEDIT_size_heap__ = 0x0400;
+} else {
+  define symbol __ICFEDIT_size_heap__ = __HEAP_SIZE;
+}
+
 /* The symbols below define the location and size of blocks of memory in the target.
  * Use these symbols to specify the memory regions available for allocation.
  */
@@ -72,7 +87,7 @@ define symbol __ICFEDIT_region_IROM2_end__   = 0x14007FFF;
 /* The following symbols define device specific memory regions and must not be changed. */
 /* Supervisory FLASH - User Data */
 define symbol __ICFEDIT_region_IROM3_start__ = 0x16000800;
-define symbol __ICFEDIT_region_IROM3_end__   = 0x160007FF;
+define symbol __ICFEDIT_region_IROM3_end__   = 0x16000FFF;
 
 /* Supervisory FLASH - Normal Access Restrictions (NAR) */
 define symbol __ICFEDIT_region_IROM4_start__ = 0x16001A00;
@@ -112,20 +127,6 @@ define symbol __ICFEDIT_region_ERAM2_start__ = 0x0;
 define symbol __ICFEDIT_region_ERAM2_end__   = 0x0;
 define symbol __ICFEDIT_region_ERAM3_start__ = 0x0;
 define symbol __ICFEDIT_region_ERAM3_end__   = 0x0;
-/*-Sizes-*/
-if (!isdefinedsymbol(__STACK_SIZE)) {
-  define symbol __ICFEDIT_size_cstack__ = 0x1000;
-} else {
-  define symbol __ICFEDIT_size_cstack__ = __STACK_SIZE;
-}
-define symbol __ICFEDIT_size_proc_stack__ = 0x0;
-
-/* Defines the minimum heap size. The actual heap size will be expanded to the end of the stack region */
-if (!isdefinedsymbol(__HEAP_SIZE)) {
-    define symbol __ICFEDIT_size_heap__ = 0x0400;
-} else {
-  define symbol __ICFEDIT_size_heap__ = __HEAP_SIZE;
-}
 /**** End of ICF editor section. ###ICF###*/
 
 
@@ -141,11 +142,24 @@ define region IROM8_region = mem:[from __ICFEDIT_region_IROM8_start__ to __ICFED
 define region EROM1_region = mem:[from __ICFEDIT_region_EROM1_start__ to __ICFEDIT_region_EROM1_end__];
 define region IRAM1_region = mem:[from __ICFEDIT_region_IRAM1_start__ to __ICFEDIT_region_IRAM1_end__];
 
+/* Public RAM 
+ * This is an unprotected public RAM region, with the placed .cy_sharedmem section.
+ * This region is used to place objects that require full access from both cores.
+ * Uncomment the following lines, define region size, and uncomment the placement of
+ * .cy_sharedmem section below in the IRAM2_region. Also define the __ICFEDIT_region_IRAM2_start__
+ *  and __ICFEDIT_region_IRAM2_end__ to place the IRAM2_region.
+ */
+/*
+define region IRAM2_region = mem:[from __ICFEDIT_region_IRAM2_start__ to __ICFEDIT_region_IRAM2_end__];
+*/
+
 define block CSTACK     with alignment = 8, size = __ICFEDIT_size_cstack__     { };
 define block PROC_STACK with alignment = 8, size = __ICFEDIT_size_proc_stack__ { };
 define block HEAP       with expanding size, alignment = 8, minimum size = __ICFEDIT_size_heap__ { };
 define block HSTACK {block HEAP, block PROC_STACK, last block CSTACK};
 define block RO     {first section .intvec, readonly};
+
+define block cy_xip { section .cy_xip };
 
 /*-Initializations-*/
 initialize by copy { readwrite };
@@ -179,12 +193,19 @@ place in          IROM1_region  { block RO };
 ".cy_efuse" : place at start of IROM8_region  { section .cy_efuse };
 
 /* Execute in Place (XIP). See the smif driver documentation for details. */
-".cy_xip" : place at start of EROM1_region  { section .cy_xip };
+"cy_xip" : place at start of EROM1_region  { block cy_xip };
 
 /* RAM */
 place at start of IRAM1_region  { readwrite section .intvec_ram};
 place in          IRAM1_region  { readwrite };
 place at end   of IRAM1_region  { block HSTACK };
+
+/* Public RAM 
+ *To use unprotected public RAM, uncomment the following .cy_sharedmem section placement.
+ */
+/*
+place at start of IRAM2_region  { section .cy_sharedmem };
+*/
 
 /* These sections are used for additional metadata (silicon revision, Silicon/JTAG ID, etc.) storage. */
 ".cymeta" : place at address mem : 0x90500000 { readonly section .cymeta };

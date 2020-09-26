@@ -25,6 +25,7 @@ var NAVTREE =
 [
   [ "CY8CPROTO-063-BLE BSP", "index.html", [
     [ "BSP Overview", "md_bsp_boards_mt_bsp_user_guide.html", null ],
+    [ "BSP Settings", "md_bsp_settings.html", null ],
     [ "BSP API Reference", "modules.html", "modules" ]
   ] ]
 ];

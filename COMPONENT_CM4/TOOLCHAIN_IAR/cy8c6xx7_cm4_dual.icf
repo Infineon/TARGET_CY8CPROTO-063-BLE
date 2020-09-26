@@ -1,6 +1,6 @@
 /*******************************************************************************
 * \file cy8c6xx7_cm4_dual.icf
-* \version 2.80
+* \version 2.90.1
 *
 * Linker file for the IAR compiler.
 *
@@ -72,7 +72,7 @@ define symbol __ICFEDIT_region_IROM2_end__   = 0x14007FFF;
 /* The following symbols define device specific memory regions and must not be changed. */
 /* Supervisory FLASH - User Data */
 define symbol __ICFEDIT_region_IROM3_start__ = 0x16000800;
-define symbol __ICFEDIT_region_IROM3_end__   = 0x160007FF;
+define symbol __ICFEDIT_region_IROM3_end__   = 0x16000FFF;
 
 /* Supervisory FLASH - Normal Access Restrictions (NAR) */
 define symbol __ICFEDIT_region_IROM4_start__ = 0x16001A00;
@@ -154,6 +154,8 @@ define block HSTACK {block HEAP, block PROC_STACK, last block CSTACK};
 define block CM0P_RO with size = FLASH_CM0P_SIZE  { readonly section .cy_m0p_image };
 define block RO     {first section .intvec, readonly};
 
+define block cy_xip { section .cy_xip };
+
 /*-Initializations-*/
 initialize by copy { readwrite };
 do not initialize  { section .noinit, section .intvec_ram };
@@ -191,7 +193,7 @@ place in          IROM1_region  { block RO };
 ".cy_efuse" : place at start of IROM8_region  { section .cy_efuse };
 
 /* Execute in Place (XIP). See the smif driver documentation for details. */
-".cy_xip" : place at start of EROM1_region  { section .cy_xip };
+"cy_xip" : place at start of EROM1_region  { block cy_xip };
 
 /* RAM */
 place at start of IRAM1_region  { readwrite section .intvec_ram};

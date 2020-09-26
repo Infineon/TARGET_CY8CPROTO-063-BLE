@@ -1,6 +1,6 @@
 /***************************************************************************//**
 * \file system_psoc6.h
-* \version 2.80
+* \version 2.90.1
 *
 * \brief Device system header file.
 *
@@ -334,6 +334,29 @@
 *       <th>Reason for Change</th>
 *   </tr>
 *   <tr>
+*       <td rowspan="4">2.90.1</td>
+*       <td>Updated \ref group_system_config_heap_stack_config_gcc section with the note
+*           on the dynamic memory allocation for ARM GCC.</td>
+*       <td>Documentation update.</td>
+*   </tr>
+*   <tr>
+*       <td>Updated system_psoc6.h to include custom CY_SYSTEM_PSOC6_CONFIG passed as compiler macro.</td>
+*       <td>Improve configuration flexibility.</td>
+*   </tr>
+*   <tr>
+*       <td>Updated attribute usage for the linker section placement in CM0+ startup code</td>
+*       <td>Enhancement based on usability feedback.</td>
+*   </tr>
+*   <tr>
+*       <td>Renamed the '.cy_xip' linker script region as 'cy_xip'</td>
+*       <td>Enable access to the XIP region start/end addresses from the C code.</td>
+*   </tr>
+*   <tr>
+*       <td>2.90</td>
+*       <td>Updated linker scripts for PSoC 64 Secure MCU cyb06xx7 devices.</td>
+*       <td>Flash allocation adjustment.</td>
+*   </tr>
+*   <tr>
 *       <td rowspan="2">2.80</td>
 *       <td>Updated linker scripts for PSoC 64 Secure MCU devices.</td>
 *       <td>Updated FLASH and SRAM memory area definitions in cyb0xxx linker script templates
@@ -344,9 +367,9 @@
 *       <td>Updated PSoC 64 Secure MCU startup sequence to initialize the Protected Register Access driver.</td>
 *   </tr>
 *   <tr>
-*     <td>2.70.1</td>
-*     <td>Updated documentation for the better description of the existing startup implementation.</td>
-*     <td>User experience enhancement.</td>
+*       <td>2.70.1</td>
+*       <td>Updated documentation for the better description of the existing startup implementation.</td>
+*       <td>User experience enhancement.</td>
 *   </tr>
 *   <tr>
 *       <td rowspan="5">2.70</td>
@@ -504,6 +527,17 @@ extern "C" {
 * \addtogroup group_system_config_user_settings_macro
 * \{
 */
+
+/*
+ * Include optional application-specific configuration header.
+ *
+ * For example, custom system_psoc6_config.h can be included here
+ * by adding the below macro definition to the build system:
+ * DEFINES+=CY_SYSTEM_PSOC6_CONFIG='"system_psoc6_config.h"'
+ */
+#if defined(CY_SYSTEM_PSOC6_CONFIG)
+#include CY_SYSTEM_PSOC6_CONFIG
+#endif
 
 
 /***************************************************************************//**

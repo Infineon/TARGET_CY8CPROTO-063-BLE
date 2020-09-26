@@ -4,11 +4,13 @@
 * Description:
 * System configuration
 * This file was automatically generated and should not be modified.
-* cfg-backend-cli: 1.2.0.1483
-* Device Support Library (libs/psoc6pdl): 1.6.0.4266
+* Tools Package 2.2.0.2801
+* latest-v2.X 2.0.0.6211
+* personalities 3.0.0.0
+* udd 3.0.0.562
 *
 ********************************************************************************
-* Copyright 2017-2019 Cypress Semiconductor Corporation
+* Copyright 2020 Cypress Semiconductor Corporation
 * SPDX-License-Identifier: Apache-2.0
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -61,6 +63,7 @@ extern "C" {
 #define srss_0_clock_0_pathmux_3_ENABLED 1U
 #define srss_0_clock_0_pathmux_4_ENABLED 1U
 #define srss_0_clock_0_periclk_0_ENABLED 1U
+#define srss_0_clock_0_pll_0_ENABLED 1U
 #define srss_0_clock_0_slowclk_0_ENABLED 1U
 #define srss_0_clock_0_wco_0_ENABLED 1U
 #define srss_0_power_0_ENABLED 1U

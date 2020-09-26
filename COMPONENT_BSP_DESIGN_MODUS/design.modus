@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Design version="12" xmlns="http://cypress.com/xsd/cydesignfile_v3">
-    <ToolInfo version="1.0.0"/>
+    <ToolInfo version="2.2.0.2801"/>
     <Devices>
         <Device mpn="CYBLE-416045-02">
             <BlockConfig>
@@ -43,8 +43,33 @@
                         <Param id="inFlash" value="true"/>
                     </Personality>
                 </Block>
+                <Block location="ioss[0].port[0].pin[4]">
+                    <Alias value="CYBSP_SW2"/>
+                    <Alias value="CYBSP_USER_BTN1"/>
+                    <Alias value="CYBSP_USER_BTN"/>
+                </Block>
+                <Block location="ioss[0].port[5].pin[0]">
+                    <Alias value="CYBSP_UART_RX"/>
+                    <Alias value="CYBSP_DEBUG_UART_RX"/>
+                </Block>
+                <Block location="ioss[0].port[5].pin[1]">
+                    <Alias value="CYBSP_UART_TX"/>
+                    <Alias value="CYBSP_DEBUG_UART_TX"/>
+                </Block>
+                <Block location="ioss[0].port[6].pin[3]">
+                    <Alias value="CYBSP_LED3"/>
+                    <Alias value="CYBSP_USER_LED1"/>
+                    <Alias value="CYBSP_USER_LED"/>
+                </Block>
+                <Block location="ioss[0].port[6].pin[4]">
+                    <Alias value="CYBSP_I2C_SCL"/>
+                </Block>
+                <Block location="ioss[0].port[6].pin[5]">
+                    <Alias value="CYBSP_I2C_SDA"/>
+                </Block>
                 <Block location="ioss[0].port[6].pin[6]">
                     <Alias value="SWDIO"/>
+                    <Alias value="CYBSP_SWDIO"/>
                     <Personality template="mxs40pin" version="1.1">
                         <Param id="DriveModes" value="CY_GPIO_DM_PULLUP"/>
                         <Param id="initialState" value="1"/>
@@ -58,6 +83,7 @@
                 </Block>
                 <Block location="ioss[0].port[6].pin[7]">
                     <Alias value="SWCLK"/>
+                    <Alias value="CYBSP_SWDCK"/>
                     <Personality template="mxs40pin" version="1.1">
                         <Param id="DriveModes" value="CY_GPIO_DM_PULLDOWN"/>
                         <Param id="initialState" value="1"/>
@@ -68,6 +94,10 @@
                         <Param id="sioOutputBuffer" value="true"/>
                         <Param id="inFlash" value="true"/>
                     </Personality>
+                </Block>
+                <Block location="ioss[0].port[7].pin[1]">
+                    <Alias value="CYBSP_LED4"/>
+                    <Alias value="CYBSP_USER_LED2"/>
                 </Block>
                 <Block location="srss[0].clock[0]">
                     <Personality template="mxs40sysclocks" version="1.2"/>
@@ -83,7 +113,7 @@
                     </Personality>
                 </Block>
                 <Block location="srss[0].clock[0].fll[0]">
-                    <Personality template="mxs40fll" version="1.0">
+                    <Personality template="mxs40fll" version="2.0">
                         <Param id="configuration" value="auto"/>
                         <Param id="desiredFrequency" value="100.000"/>
                     </Personality>
@@ -136,7 +166,15 @@
                 </Block>
                 <Block location="srss[0].clock[0].periclk[0]">
                     <Personality template="mxs40periclk" version="1.0">
-                        <Param id="divider" value="2"/>
+                        <Param id="divider" value="1"/>
+                    </Personality>
+                </Block>
+                <Block location="srss[0].clock[0].pll[0]">
+                    <Personality template="mxs40pll" version="2.0">
+                        <Param id="lowFrequencyMode" value="false"/>
+                        <Param id="configuration" value="auto"/>
+                        <Param id="desiredFrequency" value="48.000"/>
+                        <Param id="optimization" value="MinPower"/>
                     </Personality>
                 </Block>
                 <Block location="srss[0].clock[0].slowclk[0]">
@@ -192,6 +230,5 @@
             </Netlist>
         </Device>
     </Devices>
-    <Libraries/>
     <ConfiguratorData/>
 </Design>
