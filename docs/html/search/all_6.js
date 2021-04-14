@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['macros',['Macros',['../group__group__bsp__macros.html',1,'']]],
-  ['modustoolbox_20board_20support_20package_20_28bsp_29_20overview',['ModusToolbox Board Support Package (BSP) Overview',['../md_bsp_boards_mt_bsp_user_guide.html',1,'']]]
+  ['pin_20states',['Pin States',['../group__group__bsp__pin__state.html',1,'']]],
+  ['pin_20mappings',['Pin Mappings',['../group__group__bsp__pins.html',1,'']]],
+  ['peripheral_20default_20bsp_20settings',['Peripheral Default BSP Settings',['../md_source_bsps_psoc6_CY8CPROTO-063-BLE_bsp_settings.html',1,'']]]
 ];

@@ -8,17 +8,24 @@ The CY8CPROTO-063-BLE library includes the following:
 * BSP specific makefile to configure the build process for the board
 * cybsp.c/h files to initialize the board and any system peripherals
 * cybsp_types.h file describing basic board setup
-* CM4 Linker script & startup code for GCC, IAR, ARM toolchains
-* CM0+ Linker script & startup code for GCC, IAR, ARM toolchains
+* CM4 Linker script & startup code for GCC, IAR, and ARM toolchains
+* CM0+ Linker script & startup code for GCC, IAR, and ARM toolchains
 * Configurator design files (and generated code) to setup board specific peripherals
 * .lib file references for all dependent libraries
 * API documentation
 
 ### What Changed?
+#### v2.1.0
+* Added component CAT1 to all boards
+* Added new components for connectivity chips
+* Added BT configuration settings for boards that support it
+* Minor documentation updates
+#### v2.0.1
+* Minor update to better handle when to include the SCL library in the build
 #### v2.0.0
 * Updated design files and GeneratedSource with ModusToolbox 2.2 release
 * Migrated pin definitions into design.modus file
-* Updated clock frequencies to 144 MHz (fast) / 72 MHz (slow)
+* Updated clock frequencies to 100 MHz (fast) / 50 MHz (slow)
 * Updated MPNs on some boards to non-obsolete parts
 * Switched psoc6pdl dependency to new mtb-pdl
 * Switched psoc6hal dependency to new mtb-hal
@@ -51,8 +58,8 @@ This version of the CY8CPROTO-063-BLE BSP was validated for compatibility with t
 
 | Software and Tools                        | Version |
 | :---                                      | :----:  |
-| ModusToolbox Software Environment         | 2.2     |
-| GCC Compiler                              | 9.2     |
+| ModusToolbox Software Environment         | 2.2.1   |
+| GCC Compiler                              | 9.3.1   |
 | IAR Compiler                              | 8.4     |
 | ARM Compiler                              | 6.11    |
 
@@ -68,4 +75,4 @@ Minimum required ModusToolbox Software Environment: v2.2
 [api]: modules.html
 
 ---
-© Cypress Semiconductor Corporation, 2019-2020.
+© Cypress Semiconductor Corporation, 2019-2021.
