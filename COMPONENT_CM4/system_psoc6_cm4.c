@@ -1,12 +1,12 @@
 /***************************************************************************//**
 * \file system_psoc6_cm4.c
-* \version 2.90.1
+* \version 2.91
 *
 * The device system-source file.
 *
 ********************************************************************************
 * \copyright
-* Copyright 2016-2020 Cypress Semiconductor Corporation
+* Copyright 2016-2021 Cypress Semiconductor Corporation
 * SPDX-License-Identifier: Apache-2.0
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -100,7 +100,7 @@ uint32_t cy_BleEcoClockFreqHz = 0UL;
 
 /* IPC_STRUCT7->DATA configuration */
 #define CY_STARTUP_CM0_DP_STATE         (0x2uL)
-#define CY_STARTUP_IPC7_DP_OFFSET       (0x28u)
+#define CY_STARTUP_IPC7_DP_OFFSET       (28u)
 
 
 /*******************************************************************************

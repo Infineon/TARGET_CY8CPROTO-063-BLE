@@ -6,7 +6,9 @@
  *
  ***************************************************************************************************
  * \copyright
- * Copyright 2018-2021 Cypress Semiconductor Corporation
+ * Copyright 2018-2021 Cypress Semiconductor Corporation (an Infineon company) or
+ * an affiliate of Cypress Semiconductor Corporation
+ *
  * SPDX-License-Identifier: Apache-2.0
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -64,6 +66,9 @@ extern "C" {
 cy_rslt_t cybsp_init(void);
 
 #if defined(CYBSP_WIFI_CAPABLE) && defined(CY_USING_HAL)
+
+#define CYBSP_WIFI_INTERFACE_TYPE        CYBSP_SDIO_INTERFACE
+
 /**
  * \brief Get the initialized sdio object used for communicating with the WiFi Chip.
  * \note This function should only be called after cybsp_init();

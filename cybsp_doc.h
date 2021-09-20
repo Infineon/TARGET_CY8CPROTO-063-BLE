@@ -1,6 +1,8 @@
 /***********************************************************************************************//**
  * \copyright
- * Copyright 2018-2021 Cypress Semiconductor Corporation
+ * Copyright 2018-2021 Cypress Semiconductor Corporation (an Infineon company) or
+ * an affiliate of Cypress Semiconductor Corporation
+ *
  * SPDX-License-Identifier: Apache-2.0
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -568,87 +570,87 @@ extern "C" {
  */
 
 #ifdef CYBSP_J2_1
-/** Cypress J2 Header pin 1 \def CYBSP_J2_1
+/** Infineon J2 Header pin 1 \def CYBSP_J2_1
  */
 #endif
 #ifdef CYBSP_J2_2
-/** Cypress J2 Header pin 2 \def CYBSP_J2_2
+/** Infineon J2 Header pin 2 \def CYBSP_J2_2
  */
 #endif
 #ifdef CYBSP_J2_3
-/** Cypress J2 Header pin 3 \def CYBSP_J2_3
+/** Infineon J2 Header pin 3 \def CYBSP_J2_3
  */
 #endif
 #ifdef CYBSP_J2_4
-/** Cypress J2 Header pin 4 \def CYBSP_J2_4
+/** Infineon J2 Header pin 4 \def CYBSP_J2_4
  */
 #endif
 #ifdef CYBSP_J2_5
-/** Cypress J2 Header pin 5 \def CYBSP_J2_5
+/** Infineon J2 Header pin 5 \def CYBSP_J2_5
  */
 #endif
 #ifdef CYBSP_J2_7
-/** Cypress J2 Header pin 7 \def CYBSP_J2_7
+/** Infineon J2 Header pin 7 \def CYBSP_J2_7
  */
 #endif
 #ifdef CYBSP_J2_8
-/** Cypress J2 Header pin 8 \def CYBSP_J2_8
+/** Infineon J2 Header pin 8 \def CYBSP_J2_8
  */
 #endif
 #ifdef CYBSP_J2_9
-/** Cypress J2 Header pin 9 \def CYBSP_J2_9
+/** Infineon J2 Header pin 9 \def CYBSP_J2_9
  */
 #endif
 #ifdef CYBSP_J2_10
-/** Cypress J2 Header pin 10 \def CYBSP_J2_10
+/** Infineon J2 Header pin 10 \def CYBSP_J2_10
  */
 #endif
 #ifdef CYBSP_J2_11
-/** Cypress J2 Header pin 11 \def CYBSP_J2_11
+/** Infineon J2 Header pin 11 \def CYBSP_J2_11
  */
 #endif
 #ifdef CYBSP_J2_12
-/** Cypress J2 Header pin 12 \def CYBSP_J2_12
+/** Infineon J2 Header pin 12 \def CYBSP_J2_12
  */
 #endif
 #ifdef CYBSP_J2_13
-/** Cypress J2 Header pin 13 \def CYBSP_J2_13
+/** Infineon J2 Header pin 13 \def CYBSP_J2_13
  */
 #endif
 #ifdef CYBSP_J2_15
-/** Cypress J2 Header pin 15 \def CYBSP_J2_15
+/** Infineon J2 Header pin 15 \def CYBSP_J2_15
  */
 #endif
 #ifdef CYBSP_J2_16
-/** Cypress J2 Header pin 16 \def CYBSP_J2_16
+/** Infineon J2 Header pin 16 \def CYBSP_J2_16
  */
 #endif
 #ifdef CYBSP_J2_16
-/** Cypress J2 Header pin 16 \def CYBSP_J2_16
+/** Infineon J2 Header pin 16 \def CYBSP_J2_16
  */
 #endif
 #ifdef CYBSP_J2_6
-/** Cypress J2 Header pin 6 \def CYBSP_J2_6
+/** Infineon J2 Header pin 6 \def CYBSP_J2_6
  */
 #endif
 #ifdef CYBSP_J2_17
-/** Cypress J2 Header pin 17 \def CYBSP_J2_17
+/** Infineon J2 Header pin 17 \def CYBSP_J2_17
  */
 #endif
 #ifdef CYBSP_J2_18
-/** Cypress J2 Header pin 18 \def CYBSP_J2_18
+/** Infineon J2 Header pin 18 \def CYBSP_J2_18
  */
 #endif
 #ifdef CYBSP_J2_19
-/** Cypress J2 Header pin 19 \def CYBSP_J2_19
+/** Infineon J2 Header pin 19 \def CYBSP_J2_19
  */
 #endif
 #ifdef CYBSP_J2_20
-/** Cypress J2 Header pin 20 \def CYBSP_J2_20
+/** Infineon J2 Header pin 20 \def CYBSP_J2_20
  */
 #endif
 #ifdef CYBSP_J2_14
-/** Cypress J2 Header pin 14 \def CYBSP_J2_14
+/** Infineon J2 Header pin 14 \def CYBSP_J2_14
  */
 #endif
 
@@ -663,67 +665,67 @@ extern "C" {
  */
 
 #ifdef CYBSP_J6_1
-/** Cypress J6 Header pin 1 \def CYBSP_J6_1
+/** Infineon J6 Header pin 1 \def CYBSP_J6_1
  */
 #endif
 #ifdef CYBSP_J6_2
-/** Cypress J6 Header pin 2 \def CYBSP_J6_2
+/** Infineon J6 Header pin 2 \def CYBSP_J6_2
  */
 #endif
 #ifdef CYBSP_J6_3
-/** Cypress J6 Header pin 3 \def CYBSP_J6_3
+/** Infineon J6 Header pin 3 \def CYBSP_J6_3
  */
 #endif
 #ifdef CYBSP_J6_4
-/** Cypress J6 Header pin 4 \def CYBSP_J6_4
+/** Infineon J6 Header pin 4 \def CYBSP_J6_4
  */
 #endif
 #ifdef CYBSP_J6_5
-/** Cypress J6 Header pin 5 \def CYBSP_J6_5
+/** Infineon J6 Header pin 5 \def CYBSP_J6_5
  */
 #endif
 #ifdef CYBSP_J6_6
-/** Cypress J6 Header pin 6 \def CYBSP_J6_6
+/** Infineon J6 Header pin 6 \def CYBSP_J6_6
  */
 #endif
 #ifdef CYBSP_J6_7
-/** Cypress J6 Header pin 7 \def CYBSP_J6_7
+/** Infineon J6 Header pin 7 \def CYBSP_J6_7
  */
 #endif
 #ifdef CYBSP_J6_8
-/** Cypress J6 Header pin 8 \def CYBSP_J6_8
+/** Infineon J6 Header pin 8 \def CYBSP_J6_8
  */
 #endif
 #ifdef CYBSP_J6_9
-/** Cypress J6 Header pin 9 \def CYBSP_J6_9
+/** Infineon J6 Header pin 9 \def CYBSP_J6_9
  */
 #endif
 #ifdef CYBSP_J6_10
-/** Cypress J6 Header pin 10 \def CYBSP_J6_10
+/** Infineon J6 Header pin 10 \def CYBSP_J6_10
  */
 #endif
 #ifdef CYBSP_J6_11
-/** Cypress J6 Header pin 11 \def CYBSP_J6_11
+/** Infineon J6 Header pin 11 \def CYBSP_J6_11
  */
 #endif
 #ifdef CYBSP_J6_12
-/** Cypress J6 Header pin 12 \def CYBSP_J6_12
+/** Infineon J6 Header pin 12 \def CYBSP_J6_12
  */
 #endif
 #ifdef CYBSP_J6_13
-/** Cypress J6 Header pin 13 \def CYBSP_J6_13
+/** Infineon J6 Header pin 13 \def CYBSP_J6_13
  */
 #endif
 #ifdef CYBSP_J6_14
-/** Cypress J6 Header pin 14 \def CYBSP_J6_14
+/** Infineon J6 Header pin 14 \def CYBSP_J6_14
  */
 #endif
 #ifdef CYBSP_J6_15
-/** Cypress J6 Header pin 15 \def CYBSP_J6_15
+/** Infineon J6 Header pin 15 \def CYBSP_J6_15
  */
 #endif
 #ifdef CYBSP_J6_16
-/** Cypress J6 Header pin 16 \def CYBSP_J6_16
+/** Infineon J6 Header pin 16 \def CYBSP_J6_16
  */
 #endif
 
