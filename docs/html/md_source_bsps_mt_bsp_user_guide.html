@@ -87,24 +87,24 @@ $(document).ready(function(){initNavTree('md_source_bsps_mt_bsp_user_guide.html'
 
 <div class="header">
   <div class="headertitle">
-<div class="title">ModusToolbox Board Support Package (BSP) Overview </div>  </div>
+<div class="title">ModusToolbox™ Board Support Package (BSP) Overview </div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><h2>Introduction</h2>
-<p>A Board Support Package (BSP) provides a standard interface to a board's features and capabilities. The API is consistent across PSoC kits. Other software (such as middleware or the user's application) can use the BSP to configure and control the hardware. BSPs have the following characteristics:</p>
+<p>A Board Support Package (BSP) provides a standard interface to a board's features and capabilities. The API is consistent across PSoC™ kits. Other software (such as middleware or the user's application) can use the BSP to configure and control the hardware. BSPs have the following characteristics:</p>
 <ul>
 <li>BSPs initialize device resources, such as clocks and power supplies to set up the device to run firmware.</li>
 <li>BSPs contain linker scripts and startup code so you can customize them for your board.</li>
 <li>BSPs contain the hardware configuration (structures and macros) for both device peripherals and board peripherals.</li>
 <li>BSPs provide abstraction to the board by providing common aliases or names to refer to the board peripherals, such as buttons and LEDs.</li>
-<li>BSPs include the libraries for the default capabilities on the board. For example, the BSP for a kit with CapSense capabilities includes the CapSense library.</li>
+<li>BSPs include the libraries for the default capabilities on the board. For example, the BSP for a kit with CAPSENSE™ capabilities includes the CAPSENSE™ library.</li>
 </ul>
-<p>For a complete description of what the BSP provides and how it is used within ModusToolbox, see the <a href="http://www.cypress.com/ModusToolboxUserGuide">ModusToolbox User Guide</a></p>
+<p>For a complete description of what the BSP provides and how it is used within ModusToolbox™, see the <a href="http://www.cypress.com/ModusToolboxUserGuide">ModusToolbox™ User Guide</a></p>
 <h2>Quick Start with BSPs</h2>
-<p>This section provides a high-level view for using BSPs. You should be familiar with creating an application using both the ModusToolbox IDE and command-line environments. To use a BSP for a kit you need to perform the following steps:</p><ol type="1">
+<p>This section provides a high-level view for using BSPs. You should be familiar with creating an application using both the ModusToolbox™ IDE and command-line environments. To use a BSP for a kit you need to perform the following steps:</p><ol type="1">
 <li>Get a BSP using one of the following methods:<ul>
-<li>Create an application with the Project Creation tool included with the ModusToolbox software installer (<em>&lt; ModusToolbox install&gt;/tools_2.x/project-creator</em>). This tool can also be launched from the Eclipse IDE for ModusToolbox. The tool fetches the BSP for the kit that you selected, and places it in the <em>libs</em> directory.</li>
-<li>In an existing application, use the Library Manager tool to fetch the required BSP. This tool is located in <em>&lt; ModusToolbox install &gt;/tools_2.x/library-manager</em>. You can also launch it from within the ModusToolbox IDE.</li>
+<li>Create an application with the Project Creation tool included with the ModusToolbox™ software installer (<em>&lt; ModusToolbox™ install&gt;/tools_2.x/project-creator</em>). This tool can also be launched from the Eclipse IDE for ModusToolbox™. The tool fetches the BSP for the kit that you selected, and places it in the <em>libs</em> directory.</li>
+<li>In an existing application, use the Library Manager tool to fetch the required BSP. This tool is located in <em>&lt; ModusToolbox™ install &gt;/tools_2.x/library-manager</em>. You can also launch it from within the ModusToolbox™ IDE.</li>
 <li>In an existing application, create a .lib file specifying the BSP and version (commit, tag, or branch). Then run <code>make getlibs</code> to fetch the BSP and any associated libraries. The .lib file typically goes in the deps directory.</li>
 <li>In an existing application, clone the BSP GitHub repository using the git clone command. For example: <code>git clone [<a href="https://github.com/infineon/TARGET_CY8CPROTO-062-4343W/#latest-v1.X">https://github.com/infineon/TARGET_CY8CPROTO-062-4343W/#latest-v1.X</a>]</code> A BSP includes other libraries. To fetch all the libraries, use the <code>make getlibs</code> command from a command shell in the top directory of the application.</li>
 </ul>
@@ -115,8 +115,8 @@ $(document).ready(function(){initNavTree('md_source_bsps_mt_bsp_user_guide.html'
 </ol>
 <h2>References</h2>
 <ul>
-<li><a href="https://www.cypress.com/products/modustoolbox-software-environment">ModusToolbox</a></li>
-<li><a href="http://www.cypress.com/ModusToolboxUserGuide">ModusToolbox User Guide</a></li>
+<li><a href="https://www.cypress.com/products/modustoolbox-software-environment">ModusToolbox™</a></li>
+<li><a href="http://www.cypress.com/ModusToolboxUserGuide">ModusToolbox™ User Guide</a></li>
 <li><a href="http://www.cypress.com">Cypress Semiconductor, an Infineon Technologies Company</a></li>
 <li><a href="https://github.com/infineon">Infineon GitHub</a> </li>
 </ul>

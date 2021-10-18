@@ -736,7 +736,7 @@ extern "C" {
 /**
  * \addtogroup group_bsp_pins_capsense Capsense
  * \{
- * Pins connected to CapSense sensors on the board.
+ * Pins connected to CAPSENSE™ sensors on the board.
  */
 
 #ifdef CYBSP_CSD_TX

@@ -1,7 +1,7 @@
 # CY8CPROTO-063-BLE BSP Release Notes
 The PSoC 6 BLE Prototyping Kit (CY8CPROTO-063-BLE) is a low-cost hardware platform that enables design and debug of PSoC 6 MCUs. This kit is designed with a snap-away form-factor, allowing users to separate the KitProg (on-board programmer and debugger) from the target board and use independently.
 
-NOTE: BSPs are versioned by family. This means that version 1.2.0 of any BSP in a family (eg: PSoC 6) will have the same software maturity level. However, not all updates are necessarily applicable for each BSP in the family so not all version numbers will exist for each board. Additionally, new BSPs may not start at version 1.0.0. In the event of adding a common feature across all BSPs, the libraries are assigned the same version number. For example if BSP_A is at v1.3.0 and BSP_B is at v1.2.0, the event will trigger a version update to v1.4.0 for both BSP_A and BSP_B. This allows the common feature to be tracked in a consistent way.
+NOTE: BSPs are versioned by family. This means that version 1.2.0 of any BSP in a family (eg: PSoC™ 6) will have the same software maturity level. However, not all updates are necessarily applicable for each BSP in the family so not all version numbers will exist for each board. Additionally, new BSPs may not start at version 1.0.0. In the event of adding a common feature across all BSPs, the libraries are assigned the same version number. For example if BSP_A is at v1.3.0 and BSP_B is at v1.2.0, the event will trigger a version update to v1.4.0 for both BSP_A and BSP_B. This allows the common feature to be tracked in a consistent way.
 
 ### What's Included?
 The CY8CPROTO-063-BLE library includes the following:
@@ -15,12 +15,16 @@ The CY8CPROTO-063-BLE library includes the following:
 * API documentation
 
 ### What Changed?
+#### v3.0.0
+* Updated to HAL dependency to v2.0.0
+* Updated CAPSENSE™ dependency to v3.0.0
+* Regenerated code with Configurators from ModusToolbox™ v2.4.0
 #### v2.3.0
 * Add new connectivity components for easier board customization
 * Simplify BT configuration settings for boards that support it
 * Minor branding updates
 #### v2.2.0
-* Updated PSoC 64 linker sections to match secure policy settings
+* Updated PSoC™ 64 linker sections to match secure policy settings
 * Minor documentation updates
 #### v2.1.0
 * Added component CAT1 to all boards
@@ -30,14 +34,14 @@ The CY8CPROTO-063-BLE library includes the following:
 #### v2.0.1
 * Minor update to better handle when to include the SCL library in the build
 #### v2.0.0
-* Updated design files and GeneratedSource with ModusToolbox 2.2 release
+* Updated design files and GeneratedSource with ModusToolbox™ 2.2 release
 * Migrated pin definitions into design.modus file
 * Updated clock frequencies to 100 MHz (fast) / 50 MHz (slow)
 * Updated MPNs on some boards to non-obsolete parts
 * Switched psoc6pdl dependency to new mtb-pdl
 * Switched psoc6hal dependency to new mtb-hal
 * Switched psoc6make dependency to new core-make & recipe-make-cat1a
-NOTE: This version requires ModusToolbox tools 2.2 or later. This version is not backwards compatible with 1.X versions. Additional manual steps must be taken to successfully update a design using a 1.x version of the BSP to this version.
+NOTE: This version requires ModusToolbox™ tools 2.2 or later. This version is not backwards compatible with 1.X versions. Additional manual steps must be taken to successfully update a design using a 1.x version of the BSP to this version.
 #### v1.3.0
 * Minor update for documentation & branding
 * Updated design files to use latest personality files
@@ -65,19 +69,19 @@ This version of the CY8CPROTO-063-BLE BSP was validated for compatibility with t
 
 | Software and Tools                        | Version |
 | :---                                      | :----:  |
-| ModusToolbox Software Environment         | 2.2.1   |
-| GCC Compiler                              | 9.3.1   |
+| ModusToolbox™ Software Environment        | 2.4.0   |
+| GCC Compiler                              | 10.3.1  |
 | IAR Compiler                              | 8.4     |
 | ARM Compiler                              | 6.11    |
 
-Minimum required ModusToolbox Software Environment: v2.2
+Minimum required ModusToolbox™ Software Environment: v2.4.0
 
 ### More information
 * [CY8CPROTO-063-BLE BSP API Reference Manual][api]
 * [CY8CPROTO-063-BLE Documentation](http://www.cypress.com/CY8CPROTO-063-BLE)
 * [Cypress Semiconductor, an Infineon Technologies Company](http://www.cypress.com)
 * [Infineon GitHub](https://github.com/infineon)
-* [ModusToolbox](https://www.cypress.com/products/modustoolbox-software-environment)
+* [ModusToolbox™](https://www.cypress.com/products/modustoolbox-software-environment)
 
 [api]: https://infineon.github.io/TARGET_CY8CPROTO-063-BLE/html/modules.html
 

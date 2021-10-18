@@ -12,9 +12,9 @@ To use code from the BSP, simply include a reference to `cybsp.h`.
 
 ### Kit Features:
 
-* BLE 5.0 certified Cypress CYBLE-416045-02 EZ-BLE module with onboard crystal oscillators, trace antenna, passive components and PSoC 63 MCU
+* BLE 5.0 certified CYBLE-416045-02 EZ-BLE module with onboard crystal oscillators, trace antenna, passive components and PSoC 63 MCU
 * Up to 36 GPIOs in a 14x18.5x2 mm package
-* Supports digital programmable logic, capacitive-sensing with CapSense, a PDM-PCM digital microphone interface, a Quad-SPI interface, high-performance analog-to-digital converter (ADC), low-power comparators, and standard communication and timing peripherals.
+* Supports digital programmable logic, capacitive-sensing with CAPSENSE, a PDM-PCM digital microphone interface, a Quad-SPI interface, high-performance analog-to-digital converter (ADC), low-power comparators, and standard communication and timing peripherals.
 
 ### Kit Contents:
 
@@ -63,7 +63,7 @@ See the [BSP API Reference Manual][api] for the complete list of the provided in
 * [CY8CPROTO-063-BLE Documentation](http://www.cypress.com/CY8CPROTO-063-BLE)
 * [Cypress Semiconductor, an Infineon Technologies Company](http://www.cypress.com)
 * [Infineon GitHub](https://github.com/infineon)
-* [ModusToolbox](https://www.cypress.com/products/modustoolbox-software-environment)
+* [ModusToolbox™](https://www.cypress.com/products/modustoolbox-software-environment)
 
 [api]: https://infineon.github.io/TARGET_CY8CPROTO-063-BLE/html/modules.html
 [settings]: https://infineon.github.io/TARGET_CY8CPROTO-063-BLE/html/md_bsp_settings.html
