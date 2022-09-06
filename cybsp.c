@@ -59,6 +59,7 @@ cyhal_sdio_t* cybsp_get_wifi_sdio_obj(void)
 
 #endif // if defined(CYBSP_WIFI_CAPABLE) && defined(CY_USING_HAL)
 
+#if !defined(CYBSP_CUSTOM_SYSCLK_PM_CALLBACK)
 //--------------------------------------------------------------------------------------------------
 // cybsp_register_sysclk_pm_callback
 //
@@ -84,6 +85,9 @@ static cy_rslt_t cybsp_register_sysclk_pm_callback(void)
     }
     return result;
 }
+
+
+#endif // if !defined(CYBSP_CUSTOM_SYSCLK_PM_CALLBACK)
 
 
 //--------------------------------------------------------------------------------------------------
@@ -118,7 +122,11 @@ cy_rslt_t cybsp_init(void)
 
     if (CY_RSLT_SUCCESS == result)
     {
+        #if defined(CYBSP_CUSTOM_SYSCLK_PM_CALLBACK)
+        result = cybsp_register_custom_sysclk_pm_callback();
+        #else
         result = cybsp_register_sysclk_pm_callback();
+        #endif
     }
 
     #if defined(CYBSP_WIFI_CAPABLE) && defined(CY_USING_HAL)

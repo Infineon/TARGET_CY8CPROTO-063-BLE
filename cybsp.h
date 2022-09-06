@@ -77,6 +77,19 @@ cy_rslt_t cybsp_init(void);
 cyhal_sdio_t* cybsp_get_wifi_sdio_obj(void);
 #endif // defined(CYBSP_WIFI_CAPABLE)
 
+#if defined(CYBSP_CUSTOM_SYSCLK_PM_CALLBACK)
+//--------------------------------------------------------------------------------------------------
+// cybsp_register_custom_sysclk_pm_callback
+//
+// Registers a power management callback that prepares the clock system for entering deep sleep mode
+// and restore the clocks upon wakeup from deep sleep. The application should implement this
+// function and define `CYBSP_CUSTOM_SYSCLK_PM_CALLBACK` if it needs to replace the default SysClk
+// DeepSleep callback behavior with application specific logic.
+// NOTE: This is called automatically as part of \ref cybsp_init
+//--------------------------------------------------------------------------------------------------
+cy_rslt_t cybsp_register_custom_sysclk_pm_callback(void);
+#endif // defined(CYBSP_CUSTOM_SYSCLK_PM_CALLBACK)
+
 /** \} group_bsp_functions */
 
 #ifdef __cplusplus

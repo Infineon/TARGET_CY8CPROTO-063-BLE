@@ -2,7 +2,7 @@
 
 ## Overview
 
-The PSoC 6 BLE Prototyping Kit (CY8CPROTO-063-BLE) is a low-cost hardware platform that enables design and debug of PSoC 6 MCUs. This kit is designed with a snap-away form-factor, allowing users to separate the KitProg (on-board programmer and debugger) from the target board and use independently.
+The PSoC™ 6 BLE Prototyping Kit (CY8CPROTO-063-BLE) is a low-cost hardware platform that enables design and debug of PSoC™ 6 MCUs. This kit is designed with a snap-away form-factor, allowing users to separate the KitProg (on-board programmer and debugger) from the target board and use independently.
 
 ![](docs/html/board.png)
 
@@ -12,13 +12,13 @@ To use code from the BSP, simply include a reference to `cybsp.h`.
 
 ### Kit Features:
 
-* BLE 5.0 certified CYBLE-416045-02 EZ-BLE module with onboard crystal oscillators, trace antenna, passive components and PSoC 63 MCU
+* BLE 5.0 certified CYBLE-416045-02 EZ-BLE module with onboard crystal oscillators, trace antenna, passive components and PSoC™ 63 MCU
 * Up to 36 GPIOs in a 14x18.5x2 mm package
 * Supports digital programmable logic, capacitive-sensing with CAPSENSE, a PDM-PCM digital microphone interface, a Quad-SPI interface, high-performance analog-to-digital converter (ADC), low-power comparators, and standard communication and timing peripherals.
 
 ### Kit Contents:
 
-* PSoC 6 BLE Prototyping Board
+* PSoC™ 6 BLE Prototyping Board
 * USB Type-A to Micro-B cable
 * Quick Start Guide
 
@@ -34,6 +34,7 @@ Components:
 Defines:
 * CYBSP_WIFI_CAPABLE - This define, disabled by default, causes the BSP to initialize the interface to an onboard wireless chip if it has one.
 * CY_USING_HAL - This define, enabled by default, specifies that the HAL is intended to be used by the application. This will cause the BSP to include the applicable header file and to initialize the system level drivers.
+* CYBSP_CUSTOM_SYSCLK_PM_CALLBACK - This define, disabled by default, causes the BSP to skip registering its default SysClk Power Management callback, if any, and instead to invoke the application-defined function `cybsp_register_custom_sysclk_pm_callback` to register an application-specific callback.
 
 ### Clock Configuration
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Design version="12" xmlns="http://cypress.com/xsd/cydesignfile_v3">
-    <ToolInfo version="2.4.0.5721"/>
+    <ToolInfo version="2.4.0.5972"/>
     <Devices>
         <Device mpn="CYBLE-416045-02">
             <BlockConfig>
