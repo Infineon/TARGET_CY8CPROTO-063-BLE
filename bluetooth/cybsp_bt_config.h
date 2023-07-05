@@ -33,6 +33,11 @@
 extern "C" {
 #endif
 
+#if !defined(CYBSP_BT_PLATFORM_CFG_SLEEP_MODE_LP_ENABLED)
+/** If not already defined, the sleep mode LP is enabled. */
+#define CYBSP_BT_PLATFORM_CFG_SLEEP_MODE_LP_ENABLED      (1)
+#endif
+
 /** Bluetooth platform configuration settings for the board. */
 extern const cybt_platform_config_t cybsp_bt_platform_cfg;
 

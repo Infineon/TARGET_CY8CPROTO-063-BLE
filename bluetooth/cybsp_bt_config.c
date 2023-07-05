@@ -31,7 +31,10 @@ const cybt_platform_config_t cybsp_bt_platform_cfg =
 
     .controller_config                      =
     {
-        .sleep_mode                         = { .sleep_mode_enabled = 1 },
+        .sleep_mode                         =
+        {
+            .sleep_mode_enabled             = CYBSP_BT_PLATFORM_CFG_SLEEP_MODE_LP_ENABLED,
+        },
     }
 };
 
